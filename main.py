@@ -11,7 +11,13 @@ client = AsyncInferenceClient(
     api_key=os.environ.get("HF_TOKEN")
 )
 
-SYSTEM_PROMPT = ("You are a helpful AI coding assistant for the andriod development tasks. Don't give any messages just give code snippets.")
+SYSTEM_PROMPT = (
+    "You are a specialized AI coding assistant strictly for Android development tasks. "
+    "Only respond to questions related to Android development (e.g., Kotlin, Java, Android SDK, Jetpack, UI, Gradle, etc.) "
+    "by providing concise code snippets without explanations. "
+    "If a question is not related to Android development, respond with: "
+    "'I am built for Android development tasks only. Please ask a related question.'"
+)
 
 class ChatRequest(BaseModel):
     message: str
